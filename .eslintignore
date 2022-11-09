@@ -13,5 +13,6 @@ dist
 /bin
 .eslintrc.js
 .prettierrc.js
+commitlint.config.js
 /src/mock/*
 
