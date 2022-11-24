@@ -1,38 +1,29 @@
 import { RouteRecordRaw } from "vue-router";
-// import { HOME_URL, LOGIN_URL } from "@/config";
+import { HOME_URL, LOGIN_URL } from "@/config";
 
 /**
  * staticRouter(静态路由)
  */
 export const staticRouter: RouteRecordRaw[] = [
 	{
-		path: "/home/index",
-		name: "home",
-		component: () => import("@/views/home/index.vue"),
+		path: "/",
+		redirect: LOGIN_URL
+	},
+	{
+		path: LOGIN_URL,
+		name: "login",
+		component: () => import("@/views/login/index.vue"),
 		meta: {
-			title: "主页"
+			title: "登录页"
 		}
+	},
+	{
+		path: "/layout",
+		name: "layout",
+		// component: () => import("@/layouts/index.vue"),
+		redirect: HOME_URL,
+		children: []
 	}
-	// {
-	// 	path: "/",
-	// 	redirect: LOGIN_URL
-	// },
-	// {
-	// 	path: LOGIN_URL,
-	// 	name: "login",
-	// 	component: () => import("@/views/login/index.vue"),
-	// 	meta: {
-	// 		title: "登录页"
-	// 	}
-	// },
-	// {
-	// 	path: "/layout",
-	// 	name: "layout",
-	// 	component: () => import("@/layouts/index.vue"),
-	// 	// component: () => import("@/layouts/indexAsync.vue"),
-	// 	redirect: HOME_URL,
-	// 	children: []
-	// }
 ];
 
 /**

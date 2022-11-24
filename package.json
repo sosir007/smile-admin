@@ -20,6 +20,8 @@
 		"@element-plus/icons-vue": "^2.0.10",
 		"element-plus": "^2.2.21",
 		"nprogress": "^0.2.0",
+		"pinia": "^2.0.26",
+		"pinia-plugin-persistedstate": "^2.4.0",
 		"vue": "^3.2.45",
 		"vue-router": "^4.1.6"
 	},

@@ -7,6 +7,9 @@ export const LOGIN_URL: string = "/login";
 // 默认主题颜色
 export const DEFAULT_PRIMARY: string = "#13c2c2";
 
+// 路由白名单
+export const WHITE_LIST: string[] = [LOGIN_URL];
+
 // Tabs（白名单地址，不需要添加到 tabs 的路由地址）
 export const TABS_WHITE_LIST: string[] = ["/403", "/404", "/500", LOGIN_URL];
 
