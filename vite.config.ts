@@ -5,6 +5,9 @@ import { wrapperEnv } from "./src/utils/getEnv";
 import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // @see: https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -45,6 +48,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				threshold: 10240,
 				algorithm: "gzip",
 				ext: ".gz"
+			}),
+			// ElementPlus 按需导入
+			AutoImport({
+				resolvers: [ElementPlusResolver()]
+			}),
+			Components({
+				resolvers: [ElementPlusResolver()]
 			})
 		],
 		// 打包去除 console.log && debugger

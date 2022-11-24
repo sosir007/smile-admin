@@ -6,48 +6,59 @@ smile-admin 是一个自己学习开发的中后台管理项目。使用了最�
 
 ## 配置依赖：
 
-- 初始化：
+- **初始化**：
+  - **typescript**：TypeScript 是一种用于应用规模 JavaScript 开发的语言
+  - **vite**：本地 esm 支持的 web 开发构建工具
+  - **vue-tsc**：Vue3 命令行类型检查工具基于 IDE 插件 Volar
+  - **@vitejs/plugin-vue**
+- **规范**：
 
-  - typescript
-  - vite
-  - vue-tsc
-  - @vitejs/plugin-vue
+  - **prettier**：prettier 是一个固执的代码格式化器
+  - **eslint**：
 
-- 规范：
+    - **eslint**：ESLint 核心库
+    - **eslint-config-prettier**：关掉所有和 Prettier 冲突的 ESLint 的配置
+    - **eslint-plugin-prettier**：将 Prettier 的 rules 以插件的形式加入到 ESLint 里面
+    - **eslint-plugin-vue**：为 Vue 使用 ESlint 的插件
+    - **@typescript-eslint/eslint-plugin**：ESLint 插件，包含了各类定义好的检测 TypeScript 代码的规范
+    - **@typescript-eslint/parser**：ESLint 的解析器，用于解析 TypeScript，从而检查和规范 TypeScript 代码
 
-  - @commitlint/cli
-  - @commitlint/config-conventional
-  - @typescript-eslint/eslint-plugin
-  - @typescript-eslint/parser
-  - commitizen
-  - cz-git
-  - eslint
-  - eslint-config-prettier
-  - eslint-plugin-prettier
-  - eslint-plugin-vue
-  - husky
-  - lint-staged
-  - postcss
-  - postcss-html
-  - prettier
-  - stylelint
-  - stylelint-config-html
-  - stylelint-config-prettier
-  - stylelint-config-recess-order
-  - stylelint-config-recommended-scss
-  - stylelint-config-recommended-vue
-  - stylelint-config-standard-scss
+  - **stylelint**：
 
-- 配置：
-  - @vitejs/plugin-vue-jsx
-  - rollup-plugin-visualizer
-  - vite-plugin-compression
-- 类型：
+    - **stylelint**：stylelint 核心库
+    - **stylelint-config-html**：Stylelint 的可共享 HTML（和类似 HTML）配置，捆绑 postcss-html 并对其进行配置
+    - **stylelint-config-prettier**：关闭所有不必要的或可能与 Prettier 冲突的规则
+    - **stylelint-config-recess-order**：属性的排序（插件包）
+    - **stylelint-config-recommended-scss**：扩展 stylelint-config-recommended 共享配置，并为 SCSS 配置其规则
+    - **stylelint-config-recommended-vue**：扩展 stylelint-config-recommended 共享配置，并为 Vue 配置其规则
+    - **stylelint-config-standard**：打开额外的规则来执行在规范和一些 CSS 样式指南中发现的通用约定，包括：惯用 CSS 原则，谷歌的 CSS 样式指南，Airbnb 的样式指南，和 @mdo 的代码指南。
+    - **stylelint-config-standard-scss**：扩展 stylelint-config-standard 共享配置，并为 SCSS 配置其规则
+    - **postcss**：postcss-html 的依赖包
+    - **postcss-html**：用于解析 HTML（和类似 HTML）的 PostCSS 语法
 
-  - @types/node
+  - **git 流程规范**：
+    - **husky**：操作 git 钩子的工具（在 git xx 之前执行某些命令）
+    - **lint-staged**：在提交之前进行 eslint 校验，并使用 prettier 格式化本地暂存区的代码
+    - **@commitlint/cli**：校验 git commit 信息是否符合规范，保证团队的一致性
+    - **@commitlint/config-conventional**：Anglar 的提交规范
+    - **commitizen**：基于 Node.js 的 git commit 命令行工具，生成标准化的 commit message
+    - **cz-git**：一款工程性更强，轻量级，高度自定义，标准输出格式的 commitize 适配器
 
-- 组件：
-  - sass
+- **配置**：
+  - **@vitejs/plugin-vue-jsx**：通过 HMR 提供 Vue 3 JSX 和 TSX 支持。
+  - **rollup-plugin-visualizer**：生成包预览（分析依赖包大小，方便做优化处理）
+  - **vite-plugin-compression**：gzip 压缩
+- **生态系统**：
+
+  - **element-plus**：Vue3 的一个组件库
+  - **vue-router**
+
+- **类型**：
+  - **@types/node**：Node.js 的 TypeScript 定义
+- **组件**：
+  - **sass**
+  - **@element-plus/icons-vue**：Vue 组件的元素加上图标集合
+- **工具**：
 
 ## 项目计划：
 
