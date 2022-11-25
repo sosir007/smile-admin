@@ -11,3 +11,8 @@ export interface PermissionState {
 	menuList: RouteRecordRaw[];
 	keepAliveComponents: string[];
 }
+
+export interface GlobalState {
+	locale: string;
+	assemblySize: string;
+}

@@ -1,7 +1,7 @@
 {
 	"name": "smile-admin",
 	"private": true,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Smile-Admin 后台管理系统",
 	"author": "SoSir",
 	"scripts": {
@@ -23,6 +23,7 @@
 		"pinia": "^2.0.26",
 		"pinia-plugin-persistedstate": "^2.4.0",
 		"vue": "^3.2.45",
+		"vue-i18n": "^9.2.2",
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {

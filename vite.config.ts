@@ -18,7 +18,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		resolve: {
 			alias: {
 				"@": resolve(__dirname, "./src"),
-				"#": resolve(__dirname, "./src/types")
+				"#": resolve(__dirname, "./src/types"),
+				"vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js" // 解决开发环境下的警告
 			}
 		},
 		server: {

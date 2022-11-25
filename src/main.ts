@@ -3,6 +3,7 @@ import "./style.css";
 import App from "./App.vue";
 import { setupStore } from "@/store";
 import { router, setupRouter } from "@/router";
+import { setupI18n } from "@/locales";
 
 // import ElementPlus from "element-plus";
 // import "element-plus/dist/index.css";
@@ -12,6 +13,9 @@ async function bootstrap() {
 
 	// 挂载状态管理
 	setupStore(app);
+
+	// 挂载国际化插件
+	setupI18n(app);
 
 	// 挂载路由
 	setupRouter(app);
