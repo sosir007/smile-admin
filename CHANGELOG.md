@@ -4,6 +4,7 @@
 
 - 新增 pinia、pinia-plugin-persistedstate 存储 和 简单路由拦截
 - 新增 vue-i18n 国际化插件 和 国际化配置文件等
+- 新增 axios 请求配置 和 easymock 接口测试等
 
 # 0.0.1 (2022-11-02 ～ 2022-11-17)
 
