@@ -48,6 +48,7 @@ smile-admin 是一个自己学习开发的中后台管理项目。使用了最�
   - **@vitejs/plugin-vue-jsx**：通过 HMR 提供 Vue 3 JSX 和 TSX 支持。
   - **rollup-plugin-visualizer**：生成包预览（分析依赖包大小，方便做优化处理）
   - **vite-plugin-compression**：gzip 压缩
+  - **vite-plugin-html**：一个最小化 index.html 和在 index.html 使用 lodash.template 模版语法的 vite 插件
 - **生态系统**：
 
   - **element-plus**：Vue3 的一个组件库

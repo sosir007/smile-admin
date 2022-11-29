@@ -6,7 +6,7 @@ interface TestType {
 	text: string;
 }
 const getAuthMenuListApi = () => {
-	return http.get<TestType>("/test", {}, { headers: { noLoading: true } });
+	return http.get<TestType>("/api/test", {}, { headers: { noLoading: true } });
 };
 
 let text = ref<string>("");

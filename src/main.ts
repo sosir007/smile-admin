@@ -6,7 +6,7 @@ import { router, setupRouter } from "@/router";
 import { setupI18n } from "@/locales";
 
 // import ElementPlus from "element-plus";
-// import "element-plus/dist/index.css";
+import "element-plus/dist/index.css";
 
 async function bootstrap() {
 	const app = createApp(App);

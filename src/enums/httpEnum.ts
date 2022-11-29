@@ -34,3 +34,12 @@ export enum ContentTypeEnum {
 	// form-data 上传
 	FORM_DATA = "multipart/form-data;charset=UTF-8"
 }
+
+/**
+ * @description：接口前缀类型
+ */
+export enum HttpPrefixEnum {
+	USER = "/api/user", // 用户模块
+	MENU = "/api/menu", // 菜单模块
+	FILE = "/api/file" // 上传模块
+}

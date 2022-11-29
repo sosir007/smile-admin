@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { createHtmlPlugin } from "vite-plugin-html";
 import { resolve } from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -40,6 +41,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			vue(),
 			// vite 可以使用 jsx/tsx 语法
 			vueJsx(),
+			createHtmlPlugin({
+				inject: {
+					data: {
+						title: viteEnv.VITE_GLOB_APP_TITLE
+					}
+				}
+			}),
 			// 是否生成包预览(分析依赖包大小,方便做优化处理)
 			viteEnv.VITE_REPORT && visualizer(),
 			// gzip compress
