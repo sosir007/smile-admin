@@ -1,0 +1,25 @@
+// 引入重置样式
+@import "./reset.scss";
+
+// 导入公共样式
+@import "./common.scss";
+@import "./element.scss";
+@import "./tailwind.css";
+
+/* 自定义全局 CssVar */
+
+:root {
+	--pure-transition-duration: 0.016s;
+}
+
+/* 灰色模式 */
+
+.html-grey {
+	filter: grayscale(100%);
+}
+
+/* 色弱模式 */
+
+.html-weakness {
+	filter: invert(80%);
+}

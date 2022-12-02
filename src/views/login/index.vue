@@ -20,8 +20,10 @@ testFn();
 </script>
 
 <template>
-	<el-button>{{ $t("button.login") }}</el-button>
-	<div>{{ text }}</div>
+	<div class="mt-4 flex-c">
+		<el-button>{{ $t("button.login") }}</el-button>
+		<div class="ml-4 text-red-400 w-200">{{ text }}</div>
+	</div>
 </template>
 
 <style lang="scss" scoped></style>

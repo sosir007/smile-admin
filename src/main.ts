@@ -1,10 +1,11 @@
 import { createApp } from "vue";
-import "./style.css";
 import App from "./App.vue";
 import { setupStore } from "@/store";
 import { router, setupRouter } from "@/router";
 import { setupI18n } from "@/locales";
 
+// 导入公共样式
+import "@/styles/index.scss";
 // import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 
