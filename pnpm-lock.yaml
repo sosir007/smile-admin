@@ -3,7 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.2.0
   '@commitlint/config-conventional': ^17.2.0
-  '@element-plus/icons-vue': ^2.0.10
+  '@iconify-icons/ep': ^1.2.10
+  '@iconify-icons/mdi': ^1.2.34
+  '@iconify/vue': ^4.0.1
   '@types/node': ^18.11.9
   '@typescript-eslint/eslint-plugin': ^5.42.0
   '@typescript-eslint/parser': ^5.42.0
@@ -52,7 +54,6 @@ specifiers:
   vue-tsc: ^1.0.9
 
 dependencies:
-  '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.45
   axios: registry.npmmirror.com/axios/1.2.0
   element-plus: registry.npmmirror.com/element-plus/2.2.21_vue@3.2.45
   nprogress: registry.npmmirror.com/nprogress/0.2.0
@@ -66,6 +67,9 @@ dependencies:
 devDependencies:
   '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.2.0
   '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/17.2.0
+  '@iconify-icons/ep': registry.npmmirror.com/@iconify-icons/ep/1.2.10
+  '@iconify-icons/mdi': registry.npmmirror.com/@iconify-icons/mdi/1.2.34
+  '@iconify/vue': registry.npmmirror.com/@iconify/vue/4.0.1_vue@3.2.45
   '@types/node': registry.npmmirror.com/@types/node/18.11.9
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.42.0_th3qusylt4kup476cksny32feq
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.42.0_s6zjlrzpskv7oc5fqmwkfkbdxm
@@ -794,6 +798,40 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz}
     name: '@humanwhocodes/object-schema'
     version: 1.2.1
+    dev: true
+
+  registry.npmmirror.com/@iconify-icons/ep/1.2.10:
+    resolution: {integrity: sha512-slLhiMM5snJi+Mbzj02UPkK1Ym5SK9U4l1CSbA5V6YGjzL1Pk60fGPB6b7Js3jObftONWji6bpJKFjOGYyPk/g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify-icons/ep/-/ep-1.2.10.tgz}
+    name: '@iconify-icons/ep'
+    version: 1.2.10
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify-icons/mdi/1.2.34:
+    resolution: {integrity: sha512-3A7ezd/9mQKM9KEqR8QIfJaBWJ/HfZ3u45oy5/yU6FlTQrfRx+f+e0hD0nwAkbOptZmz2sFsGIfwBdX4Kl+JIw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify-icons/mdi/-/mdi-1.2.34.tgz}
+    name: '@iconify-icons/mdi'
+    version: 1.2.34
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz}
+    name: '@iconify/types'
+    version: 2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify/vue/4.0.1_vue@3.2.45:
+    resolution: {integrity: sha512-k4VwcSQpGqJpoyqENRRviFuXlVcquLvQ6BKLNJ6o2amZo7u+3HyALSO79Xyz7Sg68szQGstOk6weaKUF0DJbog==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/vue/-/vue-4.0.1.tgz}
+    id: registry.npmmirror.com/@iconify/vue/4.0.1
+    name: '@iconify/vue'
+    version: 4.0.1
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+      vue: registry.npmmirror.com/vue/3.2.45
     dev: true
 
   registry.npmmirror.com/@intlify/core-base/9.2.2:

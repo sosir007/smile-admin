@@ -1,7 +1,7 @@
 {
 	"name": "smile-admin",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "Smile-Admin 后台管理系统",
 	"author": "SoSir",
 	"scripts": {
@@ -17,7 +17,6 @@
 		"commit": "git pull && git add -A && git-cz && git push"
 	},
 	"dependencies": {
-		"@element-plus/icons-vue": "^2.0.10",
 		"axios": "^1.2.0",
 		"element-plus": "^2.2.21",
 		"nprogress": "^0.2.0",
@@ -31,6 +30,9 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.2.0",
 		"@commitlint/config-conventional": "^17.2.0",
+		"@iconify-icons/ep": "^1.2.10",
+		"@iconify-icons/mdi": "^1.2.34",
+		"@iconify/vue": "^4.0.1",
 		"@types/node": "^18.11.9",
 		"@typescript-eslint/eslint-plugin": "^5.42.0",
 		"@typescript-eslint/parser": "^5.42.0",

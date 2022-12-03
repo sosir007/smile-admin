@@ -57,22 +57,21 @@ smile-admin 是一个自己学习开发的中后台管理项目。使用了最�
   - **pinia-plugin-persistedstate**：Pinia 存储的可配置持久性
   - **vue-i18n**：Vue.js 的国际化插件
 
-- **样式**：
-
+- **样式和图标库**：
   - **sass**
-
   - **autoprefixer**：解析 CSS 并使用来自 Can I Use 网站的值将供应商前缀添加到 CSS 规则中
-
   - **cssnano**：是一款基于 postcss 构建的 css 优化开源工具。cssnano 能为你的 CSS 文件做多方面（多余的空白被删除、标识符被压缩、清理无用的 CSS 代码）的的优化，以确保最终生成的 CSS 文件对生产环境来说体积是最小的
-
   - **tailwindcss**：一个实用程序优先的 CSS 框架，用于快速构建自定义用户界面
-
   - **postcss-import**：PostCSS 插件导入 CSS 文件
-
+  - **@element-plus/icons-vue**：Vue 组件的元素加上图标集合
+  - **@iconify-icons/ep**：Element Plus 的 Iconify 图标组件
+  - **@iconify-icons/mdi**：Material Design 的 Iconify 图标组件
 - **类型**：
   - **@types/node**：Node.js 的 TypeScript 定义
 - **组件**：
-  - **@element-plus/icons-vue**：Vue 组件的元素加上图标集合
+
+  - **@iconify/vue**：Vue3 的 Iconify 图标组件
+
 - **工具**：
   - **nprogress**：简单细长的进度条
   - **axios**：浏览器和 node.js 的基于 Promise 的 HTTP 客户端
