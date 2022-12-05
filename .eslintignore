@@ -17,4 +17,4 @@ commitlint.config.js
 postcss.config.js
 tailwind.config.js
 /src/mock/*
-
+/src/assets/*

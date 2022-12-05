@@ -2,7 +2,8 @@
 
 ## 🚀 Features
 
-- 移除 @element-plus/icons-vue 安装 @iconify-icons 图标 和 新增本地图标组件
+- 移除 @element-plus/icons-vue 安装 @iconify-icons 图标 和 新增 IconifyIconOffline 本地图标组件
+- 新增本地 iconfont 文件、FontIcon 组件、IconifyIconOnline 在线图标组件 和 图标通用 hooks 等
 
 # 0.0.3 (2022-11-25 ～ 2022-12-02)
 

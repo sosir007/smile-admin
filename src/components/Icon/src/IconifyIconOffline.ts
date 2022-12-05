@@ -7,7 +7,7 @@ export default defineComponent({
 	components: { IconifyIcon },
 	props: {
 		icon: {
-			type: String as PropType<any>,
+			type: Object as PropType<any>,
 			default: null
 		}
 	},
