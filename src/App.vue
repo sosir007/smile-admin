@@ -2,7 +2,7 @@
 import { reactive, computed } from "vue";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import en from "element-plus/es/locale/lang/en";
-import { getBrowserLang } from "@/utils/util";
+import { getBrowserLang } from "@/utils/web";
 import { useGlobalStoreHook } from "@/store/modules/global";
 
 // element 语言配置

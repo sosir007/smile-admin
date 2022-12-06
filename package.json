@@ -38,6 +38,7 @@
 		"@typescript-eslint/parser": "^5.42.0",
 		"@vitejs/plugin-vue": "^3.2.0",
 		"@vitejs/plugin-vue-jsx": "^2.1.1",
+		"@vueuse/core": "^9.6.0",
 		"autoprefixer": "^10.4.13",
 		"commitizen": "^4.2.5",
 		"cssnano": "^5.1.14",

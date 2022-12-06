@@ -25,7 +25,7 @@ testFn();
 
 <template>
 	<div class="mt-4 flex-c">
-		<el-button>{{ $t("button.login") }}</el-button>
+		<el-button>{{ $t("global.loginForm.button.login") }}</el-button>
 		<div class="mx-4 text-red-400 w-200">{{ text }}</div>
 		<IconifyIconOffline :icon="Check" class="text-sky-200" />
 		<IconifyIconOffline :icon="Check1" class="text-xl text-sky-400" />

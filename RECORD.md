@@ -76,6 +76,7 @@ smile-admin 是一个自己学习开发的中后台管理项目。使用了最�
   - **nprogress**：简单细长的进度条
   - **axios**：浏览器和 node.js 的基于 Promise 的 HTTP 客户端
   - **qs**：一个支持嵌套和数组的查询字符串解析器，有深度限制
+  - **@vueuse/core**：基本的 Vue 合成实用程序的集合
 
 ## 项目计划：
 
