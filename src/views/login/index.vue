@@ -1,11 +1,41 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import v from "@/plugins/validate";
+import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
+import { HOME_URL } from "@/config";
+import VeeValidateError from "@/components/VeeValidateError/index.vue";
 
-let loginForm = ref({
-	account: "admin",
-	password: "123456"
+const { t } = useI18n();
+const router = useRouter();
+const { yup, useForm, useFields } = v;
+
+const schema = {
+	account: yup
+		.string()
+		.required()
+		.matches(/^\d{11}|.+@.+$/, t("global.loginForm.schema.account"))
+		.label(t("global.loginForm.label.account")),
+	password: yup
+		.string()
+		.required()
+		.min(6, t("global.loginForm.schema.password"))
+		.label(t("global.loginForm.label.password"))
+};
+
+const { handleSubmit, errors, values } = useForm({
+	initialValues: {
+		account: "17855827571",
+		password: "123456"
+	},
+	validationSchema: schema
 });
-const onSubmit = () => {};
+useFields(Object.keys(schema));
+
+const onSubmit = handleSubmit(values => {
+	console.log("values", values);
+	// 跳转到首页
+	router.push(HOME_URL);
+});
 </script>
 
 <template>
@@ -22,20 +52,22 @@ const onSubmit = () => {};
 						<!-- 账号 -->
 						<div class="relative">
 							<input
-								v-model="loginForm.account"
+								v-model="values.account"
 								:placeholder="$t('global.loginForm.placeholder.account')"
 								class="login-input"
 							/>
+							<VeeValidateError :error="errors.account" />
 						</div>
 
 						<!-- 密码 -->
-						<div class="relative mt-7">
+						<div class="relative mt-10">
 							<input
-								v-model="loginForm.password"
+								v-model="values.password"
 								type="password"
 								:placeholder="$t('global.loginForm.placeholder.password')"
 								class="login-input"
 							/>
+							<VeeValidateError :error="errors.password" />
 						</div>
 
 						<!-- 记住密码和忘记密码 -->

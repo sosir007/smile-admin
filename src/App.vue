@@ -5,7 +5,7 @@ import en from "element-plus/es/locale/lang/en";
 import { getBrowserLang } from "@/utils/web";
 import { useGlobalStoreHook } from "@/store/modules/global";
 
-// element 语言配置
+// element 全局配置
 const globalStore = useGlobalStoreHook();
 // 配置element按钮文字中间是否有空格
 const config = reactive({
