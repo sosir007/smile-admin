@@ -15,7 +15,7 @@ export interface ReqPage {
 // 用户管理模块
 export namespace User {
 	export interface ReqLoginForm {
-		username: string;
+		account: string;
 		password: string;
 	}
 	export interface ResLogin {
@@ -30,6 +30,7 @@ export namespace User {
 		username: string;
 		/** 当前登陆用户的角色 */
 		roleList: Array<string>;
+		phone: string;
 		gender: string;
 		age: number;
 		email: string;

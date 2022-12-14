@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import v from "@/plugins/validate";
+import md5 from "js-md5";
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
 import { HOME_URL } from "@/config";
+import { login } from "@/api/modules/user";
+import { useMessage } from "@/hooks/useMessage";
+import { useUserStoreHook } from "@/store/modules/user";
 import VeeValidateError from "@/components/VeeValidateError/index.vue";
 
-const { t } = useI18n();
 const router = useRouter();
+const useUserStore = useUserStoreHook();
+const { t } = useI18n();
 const { yup, useForm, useFields } = v;
 
 const schema = {
@@ -31,10 +36,14 @@ const { handleSubmit, errors, values } = useForm({
 });
 useFields(Object.keys(schema));
 
-const onSubmit = handleSubmit(values => {
-	console.log("values", values);
+const onSubmit = handleSubmit(async values => {
+	const { data, code, message } = await login({ ...values, password: md5(values.password) });
+	if (code !== 200) useMessage("error", message);
+
+	useUserStore.setToken(data.accessToken);
 	// 跳转到首页
 	router.push(HOME_URL);
+	// useMessage("success", `${time}，${useUserStore.username}`);
 });
 </script>
 

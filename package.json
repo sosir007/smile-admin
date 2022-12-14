@@ -21,6 +21,7 @@
 		"@vee-validate/rules": "^4.7.3",
 		"axios": "^1.2.0",
 		"element-plus": "^2.2.21",
+		"js-md5": "^0.7.3",
 		"nprogress": "^0.2.0",
 		"pinia": "^2.0.26",
 		"pinia-plugin-persistedstate": "^2.4.0",

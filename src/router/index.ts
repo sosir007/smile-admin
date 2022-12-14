@@ -4,7 +4,7 @@ import { staticRouter, errorRouter } from "@/router/modules/staticRouter";
 import { LOGIN_URL, WHITE_LIST } from "@/config";
 import { ElNotification } from "element-plus";
 import { useUserStoreHook } from "@/store/modules/user";
-import { usePermissionStoreHook } from "@/store/modules/permission";
+// import { usePermissionStoreHook } from "@/store/modules/permission";
 import NProgress from "@/config/nprogress";
 
 // /**
@@ -45,11 +45,11 @@ router.beforeEach(async (to, from, next) => {
 	if (!useUserStore.token) return next({ path: LOGIN_URL, replace: true });
 
 	// 5.如果没有菜单列表，就重新请求菜单列表并添加动态路由
-	const permissionStore = usePermissionStoreHook();
-	if (!permissionStore.menuList.length) {
-		// await initDynamicRouter();
-		return next({ ...to, replace: true });
-	}
+	// const permissionStore = usePermissionStoreHook();
+	// if (!permissionStore.menuList.length) {
+	// 	// await initDynamicRouter();
+	// 	return next({ ...to, replace: true });
+	// }
 
 	// 6.正常访问页面
 	next();

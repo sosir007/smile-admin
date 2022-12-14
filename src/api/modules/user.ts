@@ -1,7 +1,7 @@
 import http from "@/utils/http";
 // import qs from "qs";
 import { User } from "@/api/interface";
-import { HttpPrefixEnum } from "src/enums/httpEnum";
+import { HttpPrefixEnum } from "@/enums/httpEnum";
 
 /**
  * @name 用户模块
