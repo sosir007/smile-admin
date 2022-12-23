@@ -7,6 +7,7 @@ import { HOME_URL } from "@/config";
 import { login } from "@/api/modules/user";
 import { useMessage } from "@/hooks/useMessage";
 import { useUserStoreHook } from "@/store/modules/user";
+import { initDynamicRouter } from "@/router/modules/dynamicRouter";
 import VeeValidateError from "@/components/VeeValidateError/index.vue";
 
 const router = useRouter();
@@ -37,10 +38,15 @@ const { handleSubmit, errors, values } = useForm({
 useFields(Object.keys(schema));
 
 const onSubmit = handleSubmit(async values => {
+	// 执行登录接口
 	const { data, code, message } = await login({ ...values, password: md5(values.password) });
 	if (code !== 200) useMessage("error", message);
 
 	useUserStore.setToken(data.accessToken);
+
+	// 添加动态路由
+	initDynamicRouter();
+
 	// 跳转到首页
 	router.push(HOME_URL);
 	// useMessage("success", `${time}，${useUserStore.username}`);

@@ -12,7 +12,15 @@ export interface PermissionState {
 	keepAliveComponents: string[];
 }
 
+export interface ConfigProps {
+	title: string;
+	layout: string;
+	primary: string;
+	isCollapse: boolean;
+}
+
 export interface GlobalState {
 	locale: string;
 	assemblySize: string;
+	config: ConfigProps;
 }

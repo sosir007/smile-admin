@@ -5,17 +5,23 @@ import { HOME_URL, LOGIN_URL } from "@/config";
  * staticRouter(静态路由)
  */
 export const staticRouter: RouteRecordRaw[] = [
+	// {
+	// 	path: "/",
+	// 	redirect: LOGIN_URL
+	// },
 	{
 		path: "/",
-		redirect: LOGIN_URL
-	},
-	{
-		path: HOME_URL,
 		name: "home",
-		component: () => import("@/views/home/index.vue"),
+		component: () => import("@/layout/index.vue"),
 		meta: {
 			title: "首页"
-		}
+		},
+		children: [
+			{
+				path: HOME_URL,
+				component: () => import("@/views/home/index.vue")
+			}
+		]
 	},
 	{
 		path: LOGIN_URL,
@@ -28,7 +34,7 @@ export const staticRouter: RouteRecordRaw[] = [
 	{
 		path: "/layout",
 		name: "layout",
-		// component: () => import("@/layouts/index.vue"),
+		// component: () => import("@/layout/index.vue"),
 		redirect: HOME_URL,
 		children: []
 	}
