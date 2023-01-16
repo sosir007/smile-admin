@@ -1,3 +1,5 @@
+import { UserInfo } from "@/store/interface";
+
 // 分页响应参数
 export interface ResPage<T> {
 	datalist: T[];
@@ -25,21 +27,7 @@ export namespace User {
 		expires: Date;
 	}
 	export interface ResUserList {
-		id: number;
-		/** 用户名 */
-		username: string;
-		/** 当前登陆用户的角色 */
+		userInfo: UserInfo;
 		roleList: Array<string>;
-		phone: string;
-		gender: string;
-		age: number;
-		email: string;
-		address: string;
-		createTime: string;
-		avatar: string;
-		weibo?: string;
-		wechat?: string;
-		github?: string;
-		qq?: string;
 	}
 }

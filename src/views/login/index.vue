@@ -3,8 +3,9 @@ import v from "@/plugins/validate";
 import md5 from "js-md5";
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
+import { useTimeFix } from "@/utils/web";
 import { HOME_URL } from "@/config";
-import { login } from "@/api/modules/user";
+import { login, getUserInfo } from "@/api/modules/user";
 import { useMessage } from "@/hooks/useMessage";
 import { useUserStoreHook } from "@/store/modules/user";
 import { initDynamicRouter } from "@/router/modules/dynamicRouter";
@@ -12,6 +13,7 @@ import VeeValidateError from "@/components/VeeValidateError/index.vue";
 
 const router = useRouter();
 const useUserStore = useUserStoreHook();
+const time = useTimeFix();
 const { t } = useI18n();
 const { yup, useForm, useFields } = v;
 
@@ -37,6 +39,18 @@ const { handleSubmit, errors, values } = useForm({
 });
 useFields(Object.keys(schema));
 
+const initUserInfo = async () => {
+	try {
+		const { data, code, message } = await getUserInfo();
+		if (code !== 200) useMessage("error", message);
+
+		useUserStore.setUserInfo(data.userInfo);
+		useUserStore.setRoles(data.roleList);
+	} catch (error) {
+		return Promise.reject(error);
+	}
+};
+
 const onSubmit = handleSubmit(async values => {
 	// 执行登录接口
 	const { data, code, message } = await login({ ...values, password: md5(values.password) });
@@ -44,12 +58,16 @@ const onSubmit = handleSubmit(async values => {
 
 	useUserStore.setToken(data.accessToken);
 
+	await initUserInfo();
+
 	// 添加动态路由
-	initDynamicRouter();
+	await initDynamicRouter();
+
+	// TODO:清除上个账号的 tab 信息
 
 	// 跳转到首页
 	router.push(HOME_URL);
-	// useMessage("success", `${time}，${useUserStore.username}`);
+	useMessage("success", `${time}，${useUserStore.userInfo.username}`);
 });
 </script>
 

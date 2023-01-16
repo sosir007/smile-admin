@@ -5,23 +5,9 @@ import { HOME_URL, LOGIN_URL } from "@/config";
  * staticRouter(静态路由)
  */
 export const staticRouter: RouteRecordRaw[] = [
-	// {
-	// 	path: "/",
-	// 	redirect: LOGIN_URL
-	// },
 	{
 		path: "/",
-		name: "home",
-		component: () => import("@/layout/index.vue"),
-		meta: {
-			title: "首页"
-		},
-		children: [
-			{
-				path: HOME_URL,
-				component: () => import("@/views/home/index.vue")
-			}
-		]
+		redirect: LOGIN_URL
 	},
 	{
 		path: LOGIN_URL,
@@ -34,7 +20,7 @@ export const staticRouter: RouteRecordRaw[] = [
 	{
 		path: "/layout",
 		name: "layout",
-		// component: () => import("@/layout/index.vue"),
+		component: () => import("@/layout/index.vue"),
 		redirect: HOME_URL,
 		children: []
 	}
@@ -47,7 +33,7 @@ export const errorRouter: RouteRecordRaw[] = [
 	{
 		path: "/403",
 		name: "403",
-		component: () => import("@/views/errors/403.vue"),
+		component: () => import("@/views/error/403.vue"),
 		meta: {
 			title: "403页面"
 		}
@@ -55,7 +41,7 @@ export const errorRouter: RouteRecordRaw[] = [
 	{
 		path: "/404",
 		name: "404",
-		component: () => import("@/views/errors/404.vue"),
+		component: () => import("@/views/error/404.vue"),
 		meta: {
 			title: "404页面"
 		}
@@ -63,7 +49,7 @@ export const errorRouter: RouteRecordRaw[] = [
 	{
 		path: "/500",
 		name: "500",
-		component: () => import("@/views/errors/500.vue"),
+		component: () => import("@/views/error/500.vue"),
 		meta: {
 			title: "500页面"
 		}

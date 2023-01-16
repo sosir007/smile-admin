@@ -1,14 +1,28 @@
-import { RouteRecordRaw } from "vue-router";
+export interface UserInfo {
+	id: number;
+	username: string;
+	phone: string;
+	gender: string;
+	age: number;
+	email: string;
+	address: string;
+	createTime: string;
+	avatar: string;
+	weibo?: string;
+	wechat?: string;
+	github?: string;
+	qq?: string;
+}
 
 export interface UserState {
 	token: string;
-	username: string;
-	avatar: string;
+	userInfo: UserInfo;
+	/** 当前登陆用户的角色 */
 	roles: Array<string>;
 }
 
 export interface PermissionState {
-	menuList: RouteRecordRaw[];
+	menuList: Menu.MenuOptions[];
 	keepAliveComponents: string[];
 }
 

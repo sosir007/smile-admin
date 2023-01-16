@@ -1,8 +1,10 @@
 export default {
 	router: {
-		403: "403页面",
-		404: "404页面",
-		500: "500页面"
+		home: "首页",
+		errorPages: "错误页面",
+		page403: "403页面",
+		page404: "404页面",
+		page500: "500页面"
 	},
 	global: {
 		title: "Smile 后台管理系统",
@@ -44,6 +46,10 @@ export default {
 			hello_afternoon_01: "中午好",
 			hello_afternoon_02: "下午好",
 			hello_evening: "晚上好"
+		},
+		notification: {
+			permission_01: "无权限访问",
+			permission_02: "当前账号无任何菜单权限，请联系系统管理员！"
 		}
 	}
 };

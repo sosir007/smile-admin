@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { store } from "@/store";
-import { UserState } from "./../interface/index";
+import { UserInfo, UserState } from "./../interface/index";
 import piniaPersistConfig from "@/config/piniaPersist";
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
@@ -9,10 +9,22 @@ export const useUserStore = defineStore({
 	state: (): UserState => ({
 		// token
 		token: "",
-		// 用户名
-		username: "",
-		// 头像
-		avatar: "",
+		// 用户信息
+		userInfo: {
+			id: 0,
+			username: "",
+			phone: "",
+			gender: "",
+			age: 0,
+			email: "",
+			address: "",
+			createTime: "",
+			avatar: "",
+			weibo: "",
+			wechat: "",
+			github: "",
+			qq: ""
+		},
 		// 页面级别权限
 		roles: []
 	}),
@@ -20,11 +32,8 @@ export const useUserStore = defineStore({
 		setToken(token: string) {
 			this.token = token;
 		},
-		setUserName(username: string) {
-			this.username = username;
-		},
-		setAvatar(avatar: string) {
-			this.avatar = avatar;
+		setUserInfo(userInfo: UserInfo) {
+			this.userInfo = userInfo;
 		},
 		setRoles(roles: Array<string>) {
 			this.roles = roles;

@@ -4,8 +4,8 @@ import { staticRouter, errorRouter } from "@/router/modules/staticRouter";
 import { LOGIN_URL, WHITE_LIST } from "@/config";
 import { ElNotification } from "element-plus";
 import { useUserStoreHook } from "@/store/modules/user";
-// import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
-// import { usePermissionStoreHook } from "@/store/modules/permission";
+import { initDynamicRouter } from "@/router/modules/dynamicRouter";
+import { usePermissionStoreHook } from "@/store/modules/permission";
 import NProgress from "@/config/nprogress";
 
 // /**
@@ -35,27 +35,49 @@ export const router = createRouter({
  * @description 路由拦截 beforeEach
  * */
 router.beforeEach(async (to, from, next) => {
+	const useUserStore = useUserStoreHook();
+
 	// 1.NProgress 开始
 	NProgress.start();
-	// initDynamicRouter();
 
-	// 3.如果是访问白名单页面，直接放行
+	// 2.动态设置标题
+	const title = import.meta.env.VITE_GLOB_APP_TITLE;
+	document.title = to.meta.title ? `${to.meta.title} - ${title}` : title;
+
+	// 3.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
+	if (to.path === LOGIN_URL) {
+		if (useUserStore.token) return next(from.fullPath);
+		resetRouter();
+		return next();
+	}
+
+	// 4.如果是访问白名单页面，直接放行
 	if (WHITE_LIST.includes(to.path)) return next();
 
-	// 4.判断是否有 Token，没有重定向到 login
-	const useUserStore = useUserStoreHook();
+	// 5.判断是否有 Token，没有重定向到 login
 	if (!useUserStore.token) return next({ path: LOGIN_URL, replace: true });
 
-	// 5.如果没有菜单列表，就重新请求菜单列表并添加动态路由
-	// const permissionStore = usePermissionStoreHook();
-	// if (!permissionStore.menuList.length) {
-	// 	await initDynamicRouter();
-	// 	return next({ ...to, replace: true });
-	// }
+	// 6.如果没有菜单列表，就重新请求菜单列表并添加动态路由
+	const permissionStore = usePermissionStoreHook();
+	if (!permissionStore.menuList.length) {
+		await initDynamicRouter();
+		return next({ ...to, replace: true });
+	}
 
 	// 6.正常访问页面
 	next();
 });
+
+/**
+ * @description 重置路由
+ * */
+export const resetRouter = () => {
+	const usePermissionStore = usePermissionStoreHook();
+	usePermissionStore.flatMenuListGet.forEach(route => {
+		const { name } = route;
+		if (name && router.hasRoute(name)) router.removeRoute(name);
+	});
+};
 
 /**
  * @description 路由跳转结束

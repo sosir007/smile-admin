@@ -1,8 +1,10 @@
 export default {
 	router: {
-		403: "Page 403",
-		404: "Page 404",
-		500: "Page 500"
+		home: "Home",
+		errorPages: "Error Pages",
+		page403: "Page 403",
+		page404: "Page 404",
+		page500: "Page 500"
 	},
 	global: {
 		title: "Smile Admin",
@@ -44,6 +46,11 @@ export default {
 			hello_afternoon_01: "Good afternoon",
 			hello_afternoon_02: "Good afternoon",
 			hello_evening: "Good evening"
+		},
+		notification: {
+			permission_01: "Unauthorized access",
+			permission_02:
+				"The current account does not have any menu rights, please contact the system administrator!"
 		}
 	}
 };
